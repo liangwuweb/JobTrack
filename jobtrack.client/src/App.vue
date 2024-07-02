@@ -1,12 +1,5 @@
 <template>
   <Navbar />
-  <!-- <p>
-    <strong>Current route path:</strong> {{ $route.fullPath }}
-  </p>
-  <nav>
-    <RouterLink to="/">Go to Dashboard</RouterLink>
-    <RouterLink to="/create">Create Application</RouterLink>
-  </nav> -->
   <main>
     <RouterView />
   </main>
