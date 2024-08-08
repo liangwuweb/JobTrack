@@ -10,19 +10,17 @@
       </div>
       <p v-else>Loading applications...</p>
     </div>
-  </template>
+</template>
   
   <script setup>
   import { ref, onMounted } from 'vue';
-  
+
   const message = ref('Welcome to the Home Page!');
   const applications = ref([]);
 
-  const devURIBase = 'https://localhost:7180';
-  const prodURIBase = 'https://app-jobtrack-centralus-dev-001.azurewebsites.net';
   const fetchApplications = async () => {
     try {
-      const response = await fetch(prodURIBase + '/applications');
+      const response = await fetch(import.meta.env.VITE_APP_API_DEV_URL + '/applications');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -40,7 +38,9 @@
   
   onMounted(() => {
     fetchApplications();
+    
   });
+
   </script>
   
   <style scoped>

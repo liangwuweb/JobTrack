@@ -31,7 +31,7 @@
   <script setup>
   import { ref } from 'vue';
   
-  const message = ref('Start creating your application here!');
+  const test = ref();
   const formData = ref({
     companyName: '',
     jobTitle: '',
@@ -39,11 +39,9 @@
     jobDescription: ''
   });
 
-  const devURIBase = 'https://localhost:7180';
-  const prodURIBase = 'https://app-jobtrack-centralus-dev-001.azurewebsites.net';
   const submitForm = async () => {
     try {
-      const response = await fetch(prodURIBase + '/applications', {
+      const response = await fetch(import.meta.env.VITE_APP_API_DEV_URL + '/applications', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
