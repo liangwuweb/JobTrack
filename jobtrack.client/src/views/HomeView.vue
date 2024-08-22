@@ -14,21 +14,23 @@
   
   <script setup>
   import { ref, onMounted } from 'vue';
+  import api from '@/api';
 
   const message = ref('Welcome to the Home Page!');
   const applications = ref([]);
 
   const fetchApplications = async () => {
-    try {
-      const response = await fetch(import.meta.env.VITE_APP_API_DEV_URL + '/applications');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      applications.value = data;
-    } catch (error) {
-      console.error('Error fetching applications:', error);
-    }
+    // try {
+    //   const response = await fetch(import.meta.env.VITE_APP_API_DEV_URL + '/applications');
+    //   if (!response.ok) {
+    //     throw new Error('Network response was not ok');
+    //   }
+    //   const data = await response.json();
+    //   applications.value = data;
+    // } catch (error) {
+    //   console.error('Error fetching applications:', error);
+    // }
+    api.application.getAll().then(x=>applications.value = x);
   };
   
   const editApplication = (id) => {

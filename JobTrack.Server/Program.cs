@@ -4,6 +4,7 @@ using JobTrack.Server.Repositories;
 using JobTrack.Server.Repositories.Interface;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.EntityFrameworkCore;
+using JobTrack.Server.src;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ builder.Services.AddCors(options =>
         corsPolicyBuilder =>
         {
             //corsPolicyBuilder.WithOrigins("https://localhost:5173");
-            corsPolicyBuilder.WithOrigins(baseUrlConfig.TrimEnd('/'));
+            corsPolicyBuilder.WithOrigins(baseUrlConfig!.WebBase.TrimEnd('/'));
             corsPolicyBuilder.AllowAnyMethod();
             corsPolicyBuilder.AllowAnyHeader();
         });

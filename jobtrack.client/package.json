@@ -10,6 +10,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "luxon": "^3.5.0",
+    "typescript": "^5.5.4",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
   },
