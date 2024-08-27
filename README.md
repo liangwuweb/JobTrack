@@ -1,1 +1,2 @@
 # JobTrack
+I am currently developing JobTrack, an application designed to efficiently manage job applications and utilize data analysis to provide insights into the job application process. This platform helps users organize, track, and analyze their job search data, ensuring they can easily manage application statuses, deadlines, and communications. The goal is to create a tool that not only simplifies the job application journey but also offers valuable insights, helping users make informed decisions and stay on top of their career goals.
